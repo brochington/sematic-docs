@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Box, Grid, Group, Button, Title, Text, TextInput, ScrollArea } from '@mantine/core';
 import { useForm } from '@mantine/form';
+// import { useColorScheme } from '@mantine/hooks';
 
 const token =
   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkNDgyMzRhOC03MjI2LTQ1YjctOGZiYi1kNGI1MDA5MjUzZTAiLCJleHAiOjE2NzU3NjM4Njl9.FQsKnhq3p88TOgXVOacYifDhtKPHoqs-RI1kGfh6DQA';
 
 async function request(text) {
-  let resp = await fetch('https://api.preview-api.sematic.rocks/text-to-json', {
+  let resp = await fetch('https://api.sematle.com/text-to-json', {
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -26,6 +27,8 @@ async function request(text) {
 }
 
 export default function Playground() {
+  // const colorScheme = useColorScheme();
+
   const form = useForm({
     initialValues: {
       text: '',
@@ -36,9 +39,6 @@ export default function Playground() {
     },
   });
 
-  const [text, setText] = useState(
-    'The quick brown fox jumps over the lazy dog'
-  );
   const [json, setJson] = useState({});
 
   async function getJson(text) {
@@ -81,7 +81,7 @@ export default function Playground() {
                   const ReactJson = require('react-json-view').default;
                   return json ? (
                     <ReactJson
-                      // theme={'tube'}
+                      // theme={colorScheme === 'light' ? 'summerfruit:inverted' : 'monokai'}
                       src={json['sema_sentences']}
                       displayObjectSize={false}
                       displayDataTypes={false}
