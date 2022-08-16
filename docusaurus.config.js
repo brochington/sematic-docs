@@ -63,12 +63,12 @@ const config = {
           src: 'img/sematic-logo-sm-1.svg',
         },
         items: [
-          // {
-          //   type: 'doc',
-          //   docId: 'intro',
-          //   position: 'left',
-          //   label: 'Tutorial',
-          // },
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Docs',
+          },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {to: 'playground', label: 'Playground', position: 'left'},
           {
