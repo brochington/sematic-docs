@@ -1,0 +1,3 @@
+# What is NLU?
+
+[Natural Language Understanding](https://en.wikipedia.org/wiki/Natural-language_understanding) is the process of converting natural language into structured data. Often ML models jump from an input (feature) to an output (label) directly, such as a direct language translation. NLU is more about giving an intermediate representation of the input, with an expectation that the NLU output will then be operated more by other processes. Sematle's focus in on a unified output schema that's typed, so that developers can use its output in the development of programs.
