@@ -2,7 +2,17 @@ import React, { useState, useEffect } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import { Box, Grid, Group, Button, Title, Text, TextInput, ScrollArea } from '@mantine/core';
+import {
+  Box,
+  Grid,
+  Group,
+  Button,
+  Title,
+  Text,
+  TextInput,
+  ScrollArea,
+  Select,
+} from '@mantine/core';
 import { useForm } from '@mantine/form';
 // import { useColorScheme } from '@mantine/hooks';
 
@@ -48,10 +58,10 @@ export default function Playground() {
   }
 
   return (
-    <Layout title="Playground">
+    <Layout title="Sematle Playground">
       <Box m="lg">
-        <Title order={1} sx={{ fontSize: '60px' }}>
-          Playground
+        <Title order={1} sx={{ fontSize: '60px' }} mb="lg">
+          Sematle Playground
         </Title>
         {/* <Text>This is a testing ground</Text> */}
         <Grid grow>
@@ -59,10 +69,26 @@ export default function Playground() {
             <Box mt="lg">
               <form onSubmit={form.onSubmit((v) => getJson(v.text))}>
                 <TextInput
+                  mb="md"
                   required
                   label="Sentence"
                   placeholder="The quick brown fox jumps over the lazy dog"
                   {...form.getInputProps('text')}
+                />
+                -- or --
+                <Select
+                  mt="md"
+                  label="Choose example sentence"
+                  placeholder="select"
+                  data={[
+                    { label: 'Create a folder', value: 'Create a folder' },
+                    { label: 'Jane Smith baked a cake for Thomas on January 21 , 1990', value: 'Jane Smith baked a cake for Thomas on January 21 , 1990' },
+                    { label: 'The quick brown fox jumps over the lazy dog', value: 'The quick brown fox jumps over the lazy dog' },
+                    { label: `How many people are coming to your party?`, value: `How many people are coming to your party?` },
+                    { label: `Portfolio managers expect interest rates to decline further`, value: `Portfolio managers expect interest rates to decline further` },
+                    { label: `Move my meeting with John to next Tuesday`, value: `Move my meeting with John to next Tuesday` },
+                  ]}
+                  onChange={(text) => form.setValues({ text })}
                 />
                 <Group position="left" mt="md">
                   <Button type="submit">Submit</Button>
