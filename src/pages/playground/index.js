@@ -20,9 +20,11 @@ const token =
   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkNDgyMzRhOC03MjI2LTQ1YjctOGZiYi1kNGI1MDA5MjUzZTAiLCJleHAiOjE2NzU3NjM4Njl9.FQsKnhq3p88TOgXVOacYifDhtKPHoqs-RI1kGfh6DQA';
 
 async function request(text) {
-  let resp = await fetch('https://api.sematle.com/text-to-json', {
+  // let resp = await fetch('http://localhost:8088/text-to-json', {
+  let resp = await fetch('https://api.preview-api.sematic.rocks/text-to-json', {
     method: 'POST',
     mode: 'cors',
+    // mode: "no-cors",
     headers: {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + token,
