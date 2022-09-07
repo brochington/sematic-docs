@@ -24,9 +24,9 @@ async function request(text) {
   let resp = await fetch('https://api.preview-api.sematic.rocks/text-to-json', {
     method: 'POST',
     mode: 'cors',
-    // mode: "no-cors",
     headers: {
       'Content-Type': 'application/json',
+      'Cache-Control': 'no-store',
       Authorization: 'Bearer ' + token,
     },
     body: JSON.stringify({
