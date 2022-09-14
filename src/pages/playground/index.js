@@ -21,7 +21,7 @@ const token =
 
 async function request(text) {
   // let resp = await fetch('http://localhost:8088/text-to-json', {
-  let resp = await fetch('https://api.preview-api.sematic.rocks/text-to-json', {
+  let resp = await fetch('https://api.sematle.com/text-to-json', {
     method: 'POST',
     mode: 'cors',
     headers: {
