@@ -106,11 +106,11 @@ export default function Playground() {
                 }
               >
                 {() => {
-                  const ReactJson = require('react-json-view').default;
+                  const { JsonViewer } = require('@textea/json-viewer');
                   return json ? (
-                    <ReactJson
+                    <JsonViewer
                       // theme={colorScheme === 'light' ? 'summerfruit:inverted' : 'monokai'}
-                      src={json['sema_sentences']}
+                      value={json['sentences']}
                       displayObjectSize={false}
                       displayDataTypes={false}
                     />
